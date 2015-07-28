@@ -1,0 +1,96 @@
+{
+  "amphion-cameras": {
+    "amphion-camera-definition": [
+      {
+        "-model": "Axis-Q6035",
+        "driver": { "classname": "com.nov.amphion.cctv.camera.BasicControlledCamera" },
+        "controller": { "classname": "com.nov.amphion.cctv.camera.DefaultCameraControl" },
+        "resolutions": {
+          "resolution": [
+            { "value": "1920x1080" },
+            { "value": "1280x720" },
+            { "value": "800x450" },
+            { "value": "480x270" },
+            { "value": "320x180" }
+          ]
+        },
+        "capture": {
+          "pull": {
+            "name": "jpeg",
+            "value": "/axis-cgi/jpg/image.cgi?resolution={resolution}&compression={compression}&rotation={imagerotation}"
+          },
+          "push": {
+            "name": "mjpeg",
+            "value": "/axis-cgi/mjpg/video.cgi?resolution={resolution}&fps={fps}&compression={compression}&rotation={imagerotation}"
+          }
+        },
+        "control": {
+          "command": [
+            {
+              "name": "current",
+              "value": "/axis-cgi/com/ptz.cgi?camera={camera}&query=position,limits&html=no"
+            },
+            {
+              "name": "pan",
+              "value": "/axis-cgi/com/ptz.cgi?camera={camera}&imagerotation={imagerotation}&pan={pan}"
+            },
+            {
+              "name": "rpan",
+              "value": "/axis-cgi/com/ptz.cgi?camera={camera}&imagerotation={imagerotation}&rpan={rpan}"
+            },
+            {
+              "name": "tilt",
+              "value": "/axis-cgi/com/ptz.cgi?camera={camera}&imagerotation={imagerotation}&tilt={tilt}"
+            },
+            {
+              "name": "rtilt",
+              "value": "/axis-cgi/com/ptz.cgi?camera={camera}&imagerotation={imagerotation}&rtilt={rtilt}"
+            },
+            {
+              "name": "zoom",
+              "value": "/axis-cgi/com/ptz.cgi?camera={camera}&imagerotation={imagerotation}&zoom={zoom}"
+            },
+            {
+              "name": "rzoom",
+              "value": "/axis-cgi/com/ptz.cgi?camera={camera}&imagerotation={imagerotation}&rzoom={rzoom}"
+            },
+            {
+              "name": "iris",
+              "value": "/axis-cgi/com/ptz.cgi?camera={camera}&imagerotation={imagerotation}&iris={iris}"
+            },
+            {
+              "name": "riris",
+              "value": "/axis-cgi/com/ptz.cgi?camera={camera}&imagerotation={imagerotation}&riris={riris}"
+            }
+          ]
+        }
+      },
+      {
+        "model": "FixedTestCamera",
+        "driver": { "-classname": "com.nov.amphion.cctv.camera.FixedTestCamera" },
+        "resolutions": {
+          "resolution": [
+            { "value": "1920x1080" },
+            { "value": "1280x720" },
+            { "value": "800x450" },
+            { "value": "480x270" },
+            { "value": "320x180" }
+          ]
+        }
+      },
+      {
+        "model": "PTZTestCamera",
+        "driver": { "-classname": "com.nov.amphion.cctv.camera.PTZTestCamera" },
+        "resolutions": {
+          "resolution": [
+            { ""value": "1920x1080" },
+            { "value": "1280x720" },
+            { "value": "800x450" },
+            { "value": "480x270" },
+            { "value": "320x180" }
+          ]
+        }
+      }
+    ]
+  }
+}

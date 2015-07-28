@@ -1,0 +1,65 @@
+[
+      {
+        "name": "PTZ Camera Mock",
+        "model": "PTZTestCamera",
+        "toolName": "TopDrive",
+        "url": "http://192.168.0.90:80",
+        "properties": [
+            {
+              "name": "resolution",
+              "value": "1280x720"
+            },
+            {
+              "name": "fps",
+              "value": "20"
+            }
+          ]
+        
+      },
+      {
+        "name": "Fixed Camera Mock",
+        "model": "FixedTestCamera",
+        "toolName": "TopDrive",
+        "url": "http://192.168.0.90:80",
+        "properties": [
+            {
+              "name": "resolution",
+              "value": "1280x720"
+            },
+            {
+              "name": "fps",
+              "value": "20"
+            }
+          ]
+        
+      },
+      {
+        "name": "TopDrive 1",
+        "url": "http://192.168.0.90:80",
+        "model": "Axis-Q6035",
+        "toolName": "TopDrive",
+        "properties":  [
+            {
+              "name": "imagerotation",
+              "value": "180"
+            },
+            {
+              "name": "camera",
+              "value": "1"
+            },
+            {
+              "name": "resolution",
+              "value": "1280x720"
+            },
+            {
+              "name": "fps",
+              "value": "20"
+            },
+            {
+              "name": "compression",
+              "value": "50"
+            }
+          ]
+        
+      }
+    ]

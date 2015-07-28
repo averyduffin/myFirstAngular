@@ -1,0 +1,30 @@
+<div id="page-article">
+	<header><h1>CCTV Cameras</h1></header>
+	<div class="add-button">
+		<a class="btn btn-primary" href="#/new">Add Camera</a>
+	</div>
+	<div id="page-part-article">
+		<div ng-repeat="camera in cameras">
+			<span ng-click="collapse($event)" class="cursor-click"><span class="glyphicon glyphicon-chevron-down"></span>{{camera.name}}</span>
+			<a class="link-spacing btn-link" href="#/edit/{{camera.name}}">Edit</a><a class="link-spacing btn-link" ng-click="deleteCamera(camera)">Delete</a>
+			<div class="camera">
+				
+					<table class="table table-hover">
+					<tr><th>Name:</th><td>{{camera.model}}</td></tr>
+					<tr><th>Tool Name:</th><td>{{camera.toolName}}</td></tr>
+					<tr><th>URL:</th><td>{{camera.url}}</td></tr>
+					</table>
+
+				<div>
+				<h4>Properties</h4>
+				<table class="table table-hover">
+					<tr><th>Name</th><th>Value</th></tr>
+					<tr ng-repeat="property in camera.properties">
+					<td>{{property.name}}</td><td>{{property.value}}</td>
+					</tr>
+				</table>
+				</div>
+			</div>
+		</div>
+	</div>
+ </div> 
